@@ -1,4 +1,4 @@
-include "lists.h"
+#include "lists.h"
 /**
  * check_cycle - function that checks if a singly linked list has a cycle
  * @list: pointer to the head of the linked list
@@ -8,33 +8,17 @@ include "lists.h"
 
 int check_cycle(listint_t *list)
 {
-	listint_t *head = list, **nodes;
-	int c = 0, i = 0, j;
+	listint_t *one_step, *two_steps;
 
-	while (head)
+	one_step = list;
+	two_steps = list;
+	while (two_steps != NULL && two_steps->next != NULL)
 	{
-		c++;
-		head = head->next;
+		one_step = one_step->next;
+		two_steps = two_steps->next->next;
+		if (one_step == two_steps)
+			return (1);
 	}
-	nodes = malloc(sizeof(listint_t *) * c);
-	if (nodes == NULL)
-		return (0);
-	head = list;
-	while (head)
-	{
-		for (j = 0; j < i; j++)
-		{
-			if (head == nodes[j])
-			{
-				free(nodes);
-				return (1);
-			}
-		}
-		nodes[i] = head;
-		head = head->next;
-		i++;
-	}
-	free(nodes);
 	return (0);
 }
 
