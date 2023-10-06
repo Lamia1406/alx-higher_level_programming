@@ -35,3 +35,9 @@ if size is a float and is less than 0, raise a TypeError exception with the mess
 	Traceback (most recent call last):
 	...
 	TypeError: size must be an integer
+
+missing argument
+	>>> print_square()
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() missing 1 required positional argument: 'size'
