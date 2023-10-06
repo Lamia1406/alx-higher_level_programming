@@ -29,10 +29,10 @@ If a or be are floats, they must be first casted into integers
 
 a and b must be integers or floats
 	>>> add_integer("school", 2)
-	Traceback(most recent call test):
+	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
 	>>> add_integer(2, "school")
-	Traceback(most recent call test):
+	Traceback (most recent call last):
 	...
 	TypeError: b must be an integer
