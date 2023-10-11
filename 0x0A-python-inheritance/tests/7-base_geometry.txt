@@ -28,18 +28,46 @@ value is not an int(String)
 	...
 	TypeError: John must be an integer
 
-value is not an int(iterable)
+value is not an int(tuple)
         >>> bg = BaseGeometry()
         >>> bg.integer_validator("John", (4,))
         Traceback (most recent call last):
         ...
         TypeError: John must be an integer
 
+value is not an int(list)
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("John", [4])
+        Traceback (most recent call last):
+        ...
+        TypeError: John must be an integer
+
+value is not an int(bool)
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("John", True)
+        Traceback (most recent call last):
+        ...
+        TypeError: John must be an integer
+
+value is not an int(set)
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("John", {1, 2})
+        Traceback (most recent call last):
+        ...
+        TypeError: John must be an integer
+
+value is not an int(None)
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("John", None)
+	Traceback (most recent call last):
+	...
+        TypeError: John must be an integer
+
 value is less than or equal to 0
 	>>> bg = BaseGeometry()
         >>> bg.integer_validator("num1", 0)
 	Traceback (most recent call last):
-        ...
+	...
 	ValueError: num1 must be greater than 0
 
 	>>> bg = BaseGeometry()
