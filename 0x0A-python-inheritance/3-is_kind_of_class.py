@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" this module consists only of one function: is_kind_of_class(obj, a_class)"""
+""" this module consists only of one function:
+            is_kind_of_class(obj, a_class)"""
 
 
 def is_kind_of_class(obj, a_class):
