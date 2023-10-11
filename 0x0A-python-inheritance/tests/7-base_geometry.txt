@@ -21,12 +21,19 @@ One argument
 	...
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-value is not an int
+value is not an int(String)
 	>>> bg = BaseGeometry()
         >>> bg.integer_validator("John", "Doe")
         Traceback (most recent call last):
 	...
 	TypeError: John must be an integer
+
+value is not an int(iterable)
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("John", (4,))
+        Traceback (most recent call last):
+        ...
+        TypeError: John must be an integer
 
 value is less than or equal to 0
 	>>> bg = BaseGeometry()
