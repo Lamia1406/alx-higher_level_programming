@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """This module contains only one function: read_file(filename="")"""
 
 
