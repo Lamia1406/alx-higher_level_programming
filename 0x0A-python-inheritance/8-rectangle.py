@@ -21,5 +21,5 @@ class Rectangle(BaseGeometry):
     """a subclass of the base class BaseGeometry
         that represents a rectangle"""
     def __init__(self, width, height):
-        self.__width = width
+        self.__width = super().integer_validator("width", width)
         self.height = super().integer_validator("height", height)
