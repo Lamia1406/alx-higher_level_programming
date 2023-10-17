@@ -10,32 +10,34 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if width <= 0:
             raise ValueError("width must be > 0")
-        self.__width = width
+        self.width = width
         if type(height) != int:
             raise TypeError("height must be an integer")
         if height <= 0:
             raise ValueError("height must be > 0")
-        self.__height = height
+        self.height = height
         if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
-        self.__x = x
+        self.x = x
         if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
-        self.__y = y
+        self.y = y
         if type(id) != int and id is not None:
             raise TypeError("id must be an integer")
         super().__init__(id)
 
     @property
     def width(self):
+        """getter of the width of a rectangle"""
         return self.__width
 
     @width.setter
     def width(self, width):
+        """setter of the width of a rectangle"""
         if type(width) != int:
             raise TypeError("width must be an integer")
         if width < 0:
@@ -44,10 +46,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """getter of the height of a rectangle"""
         return self.__height
 
     @height.setter
     def height(self, height):
+        """setter of the height of a rectangle"""
         if type(height) != int:
             raise TypeError("height must be an integer")
         if height < 0:
@@ -56,10 +60,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """getter of the x coordinate the rectangle should be displayed"""
         return self.__x
 
     @x.setter
     def x(self, x):
+        """setter of the x coordinate the rectangle should be displayed"""
         if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
@@ -68,10 +74,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """getter of the y coordinate the rectangle should be displayed"""
         return self.__y
 
     @y.setter
     def y(self, y):
+        """setter of the y coordinate the rectangle should be displayed"""
         if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -80,14 +88,14 @@ class Rectangle(Base):
 
     def area(self):
         """returns the area of a rectangle"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """prints the rectangle with character #"""
         for space in range(self.__y):
             print()
         for ligne in range(self.__height):
-            print((self.__x * " ") + ("#" * self.__width))
+            print((self.x * " ") + ("#" * self.width))
 
     def __str__(self):
         """return the string representation of the rectangle"""
@@ -101,13 +109,13 @@ class Rectangle(Base):
                 if key == "id":
                     self.id = value
                 if key == "width":
-                    self.__width = value
+                    self.width = value
                 if key == "height":
-                    self.__height = value
+                    self.height = value
                 if key == "x":
-                    self.__x = value
+                    self.x = value
                 if key == "y":
-                    self.__y = value
+                    self.y = value
         if len(args) > 0:
             self.id = args[0]
         if len(args) > 1:
