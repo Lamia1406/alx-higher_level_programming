@@ -38,7 +38,6 @@ class Rectangle(Base):
         """setter of the width of a rectangle"""
         if type(width) != int:
             raise TypeError("width must be an integer")
-        print("hi", width)
         if width <= 0:
             raise ValueError("width must be > 0")
         self.__width = width
