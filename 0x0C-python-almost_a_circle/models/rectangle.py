@@ -6,6 +6,7 @@ from models.base import Base
 class Rectangle(Base):
     """subclass of Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
         if type(width) != int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -26,7 +27,6 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
