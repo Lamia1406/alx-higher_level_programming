@@ -26,8 +26,6 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.y = y
-        if type(id) != int and id is not None:
-            raise TypeError("id must be an integer")
         super().__init__(id)
 
     @property
