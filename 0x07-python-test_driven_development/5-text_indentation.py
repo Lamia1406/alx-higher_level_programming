@@ -5,7 +5,7 @@
 def text_indentation(text):
     """prints a text with 2 new lines
         after each of these characters: ., ? and :"""
-    if type(text) != str:
+    if text is None or type(text) != str:
         raise TypeError("text must be a string")
     for i in range(len(text)):
         if text[i - 1] == "." or text[i - 1] == "?" or text[i - 1] == ":":
