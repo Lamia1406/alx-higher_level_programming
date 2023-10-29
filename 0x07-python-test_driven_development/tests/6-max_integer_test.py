@@ -22,3 +22,18 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_regular(self):
         self.assertIs(max_integer([1, 3, 4, 2]), 4)
+
+    def test_max_end(self):
+        self.assertIs(max_integer([1, 3, 4, 5]), 5)
+
+    def test_max_beginning(self):
+        self.assertIs(max_integer([10, 3, 4, 5]), 10)
+
+    def test_one_negative_num(self):
+        self.assertIs(max_integer([-10, 3, 4, 5]), 5)
+
+    def test_negative_nums(self):
+        self.assertIs(max_integer([-10, -3, -4, -5]), -3)
+
+    def test_one_element(self):
+        self.assertIs(max_integer([-10]), -10)
