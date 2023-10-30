@@ -29,6 +29,8 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a can't be empty")
     if not m_b:
         raise ValueError("m_b can't be empty")
+    if len(m_a[0]) != len(m_b):
+        raise ValueError("m_a and m_b can't be multiplied")
 
     result = []
     for i in range(len(m_a)):
