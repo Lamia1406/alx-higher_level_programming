@@ -7,8 +7,8 @@ const getLength = (argv) => {
   }
   return i;
 };
-const length = getLength(process.argv);
-if (length <= 2) {
+const len = getLength(process.argv);
+if (len <= 2) {
   console.log('No argument');
 } else {
   console.log(process.argv[2]);
