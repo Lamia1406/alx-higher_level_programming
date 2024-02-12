@@ -2,7 +2,8 @@
 
 const getLength = (argv) => {
   let i = 0;
-  for (const _ of argv) {
+  for (let _ of argv) {
+    _ = _ + '';
     i++;
   }
   return i;
